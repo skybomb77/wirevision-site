@@ -149,7 +149,7 @@ async function generate() {
         formData.append('style', selectedStyle);
         formData.append('ratio', selectedRatio);
         
-        const res = await fetch(API + '/api/generate', { method: 'POST', body: formData });
+        const res = await apiFetch(API + '/api/generate', { method: 'POST', body: formData });
         const data = await res.json();
         
         if (data.success) {
