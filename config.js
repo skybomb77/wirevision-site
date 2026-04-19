@@ -1,6 +1,6 @@
 // WireVision 配置
 const CONFIG = {
-    api: "http://localhost:5004",
+    api: "https://interstaminal-unvirtuously-gennie.ngrok-free.dev/wirevision",
     name: "WireVision",
     version: "1.0.0"
 };
