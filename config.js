@@ -5,9 +5,11 @@ const CONFIG = {
     version: "1.0.0"
 };
 
-// 自動偵測：本地開發 vs 生產
+// 自動偵測：本地 vs ngrok vs 生產
 if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
     CONFIG.api = 'http://localhost:5004';
+} else if (location.hostname.includes('ngrok')) {
+    CONFIG.api = '';  // same-origin, no CORS
 }
 
 // API fetch helper — 自動帶 ngrok skip header
