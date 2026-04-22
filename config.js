@@ -1,6 +1,7 @@
 // WireVision 配置
 const CONFIG = {
     api: "https://interstaminal-unvirtuously-gennie.ngrok-free.dev/wirevision",
+    auth_api: "https://interstaminal-unvirtuously-gennie.ngrok-free.dev/auth",
     name: "WireVision",
     version: "1.0.0"
 };
@@ -8,8 +9,10 @@ const CONFIG = {
 // 自動偵測：本地 vs ngrok vs 生產
 if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
     CONFIG.api = 'http://localhost:5004';
+    CONFIG.auth_api = 'http://localhost:5010';
 } else if (location.hostname.includes('ngrok')) {
     CONFIG.api = '';  // same-origin, no CORS
+    CONFIG.auth_api = '/auth';
 }
 
 // API fetch helper — 自動帶 ngrok skip header
